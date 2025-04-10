@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <link rel="stylesheet" href="style.css">
+
+    <script>
+        function ValidarFormulario(event) {
+            event.preventDefault(); 
+
+            
+            const email = document.getElementById('email').value.trim();
+            const senha = document.getElementById('senha').value.trim();
+            
+
+            if (email === "" || senha === "") {
+                alert("Todos os campos são obrigatórios, preencha-os corretamente");
+                return false;
+            }
+        
+
+            document.getElementById('myForm').submit();
+        }
+    </script>
+    
+    <title>Portal do Timão</title>
+</head>
+<body>
+    <div id="header">
+        FALE CONOSCO
+    </div>
+    <div id="container">
+        <form id="myForm" onsubmit="ValidarFormulario(event)">
+            
+            <label for="email">Seu email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            
+            
+            <button type="submit">Fazer login</button>
+            <p>Não tem cadastro?  <a href="cadastro.html">Criar conta.</a></p>
+        </form>
+       
+    </div>
+
+    <div id="footer">
+        &#169; reg.com 
+    </div>
+
+</body>
+</html>

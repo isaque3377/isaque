@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <link rel="stylesheet" href="style.css">
+
+    <script>
+        function ValidarFormulario(event) {
+            event.preventDefault(); 
+
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const senha = document.getElementById('senha').value.trim();
+            const confirmar = document.getElementById('confirmar').value.trim();
+
+            if (nome === "" || email === "" || senha === "" || confirmar === "") {
+                alert("Todos os campos são obrigatórios, preencha-os corretamente");
+                return false;
+            }
+            if (senha !== confirmar) {
+                alert("As senhas não coincidem. Por favor, verifique.");
+                return false;
+            }
+
+            document.getElementById('myForm').submit();
+        }
+    </script>
+    
+    <title>Portal do Timão</title>
+</head>
+<body>
+    <div id="header">
+        FALE CONOSCO
+    </div>
+    <div id="container">
+        <form id="myForm" onsubmit="ValidarFormulario(event)">
+            <label for="nome">Digite seu nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="email">Seu email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            
+            <label for="confirmar">Confirmar senha:</label>
+            <input type="password" id="confirmar" name="confirmar" required>
+            
+            <button type="submit">Cadastrar</button>
+            <p>Já tem cadastro?  <a href="index.html">Fazer login</a></p>
+        </form>
+    </div>
+
+                
+
+    <div id="footer">
+        &#169; reg.com 
+    </div>
+
+</body>
+</html>
